@@ -16,19 +16,19 @@ import { defineConfig } from 'vite'
 // (python http.server NO sirve). Vite dev y `vite preview` sí sirven
 // Range en los archivos de public/ (verificado con curl en README).
 // https://vite.dev/config/
-// Base '/JavaViva/': el sitio se sirve en una subruta
+// Base '/javaviva/' (minúsculas, v1.18): el sitio se sirve en una subruta
 // (https://interactivo.nouslogic.xyz/JavaViva), no en la raíz del
 // dominio. Sin esto, los assets del build saldrían como /assets/...
 // y el navegador los buscaría en la raíz del subdominio.
 // OJO: esto SÍ mueve dónde se sirve el .jar del motor. CheerpJ monta
 // /app/ sobre la RAÍZ del servidor web (docs: "/app/ is the root of
 // the web server"), y con este base Vite solo sirve public/ bajo
-// /JavaViva/: el jar se descarga de {origen}/JavaViva/engine/... por
-// eso ENGINE_JAR es '/app/JavaViva/engine/freej2me_plus.jar'. Con
+// /javaviva/: el jar se descarga de {origen}/javaviva/engine/... por
+// eso ENGINE_JAR es '/app/javaviva/engine/freej2me_plus.jar'. Con
 // '/app/engine/...' daba 404 en dev y en preview (v1.16 roto) aunque
 // el archivo existiera en public/engine/.
 export default defineConfig({
-  base: '/JavaViva/',
+  base: '/javaviva/',
   plugins: [react()],
   server: {
     port: 5173,

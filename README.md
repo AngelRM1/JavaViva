@@ -59,6 +59,17 @@ sin juegos incluidos. React + Vite es solo la cáscara: el motor es
 > es la RAÍZ del despliegue de Pages, no `/JavaViva/:splat` — ahí no
 > existe nada) y ya NO hace falta ninguna regla `/engine/*`.
 >
+> **v1.18 (2026-11-21) — URL en minúsculas + proxy en Interactivo:**
+> el base pasó a `'/javaviva/'` y `ENGINE_JAR` a
+> `'/app/javaviva/engine/freej2me_plus.jar'` para que la URL pública
+> sea https://interactivo.nouslogic.xyz/javaviva (enmascara el
+> despliegue https://javaviva.pages.dev/ con la regla de
+> Interactivo `public/_redirects`:
+> `/javaviva/* https://javaviva.pages.dev/:splat 200`, antes del
+> fallback SPA). En desarrollo se abre ahora en
+> http://localhost:5173/javaviva/. El `.jar` del motor se subió al
+> repo por la web de GitHub (el conector no acepta binarios).
+>
 > **v1.16 (2026-11-20):** la guía «Cómo jugar» tiene `margin-bottom:
 > 10px` (`.howto`). El sitio ahora tiene **dos landings**: `#/inicio`
 > (JavaViva Web, la actual) y `#/windows` (nueva, `LandingWindows`:

@@ -45,7 +45,7 @@ let consoleMirrorInstalled = false
 export default function App() {
   const [cheerpjStatus, setCheerpjStatus] = useState<CheerpJStatus>('idle')
   const [log, setLog] = useState<string[]>([
-    'JavaViva Web v1.17 — arreglo del 404 del .jar del motor (ENGINE_JAR bajo /JavaViva/). Sin juegos incluidos: sube tu propio .jar, solo en tu navegador. Motor: FreeJ2ME-Plus v1.53 (GPLv3) + CheerpJ 5.0.',
+    'JavaViva Web v1.18 — URL en minúsculas (/javaviva/) y proxy en Interactivo. Sin juegos incluidos: sube tu propio .jar, solo en tu navegador. Motor: FreeJ2ME-Plus v1.53 (GPLv3) + CheerpJ 5.0.',
   ])
   // v1.11 — tecla física asignada a cada tecla del teléfono (se guarda
   // en este navegador). Ver src/lib/keys.ts.
@@ -619,7 +619,7 @@ export default function App() {
           de CheerpJ/GPLv3 deben seguir accesibles). */}
       <footer className="footer">
         <p>
-          © 2026 NousLogic • JavaViva Web v1.17 (versión segura) • Motor{' '}
+          © 2026 NousLogic • JavaViva Web v1.18 (versión segura) • Motor{' '}
           <a
             href="https://github.com/hex007/freej2me"
             target="_blank"

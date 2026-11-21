@@ -117,12 +117,15 @@
 // Reglas:
 //  - cheerpjInit() se llama UNA sola vez por carga de página.
 //  - /app/ es la raíz del servidor web, como la ve Java. El motor
-//    vive en /app/JavaViva/engine/freej2me_plus.jar (v1.17): el sitio
-//    se sirve bajo /JavaViva/ (base de Vite), así que el .jar se
-//    descarga de {origen}/JavaViva/engine/freej2me_plus.jar. Con el
-//    base anterior ('/') era /app/engine/... y con el base '/JavaViva/'
-//    Vite solo sirve public/ bajo /JavaViva/: pedir /engine/... daba
-//    404 en dev y en preview aunque el archivo existiera (v1.16 roto).
+//    vive en /app/javaviva/engine/freej2me_plus.jar (v1.17: base
+//    '/JavaViva/'; v1.18: base '/javaviva/' en minúsculas para que la
+//    URL pública sea https://interactivo.nouslogic.xyz/javaviva): el
+//    sitio se sirve bajo /javaviva/ (base de Vite), así que el .jar
+//    se descarga de {origen}/javaviva/engine/freej2me_plus.jar. Con
+//    el base anterior ('/') era /app/engine/... y con el base
+//    '/JavaViva/' Vite solo sirve public/ bajo /JavaViva/: pedir
+//    /engine/... daba 404 en dev y en preview aunque el archivo
+//    existiera (v1.16 roto).
 //  - La página debe servirse por http(s), nunca file://, y el
 //    servidor debe soportar peticiones HTTP Range.
 //  - Java 8 explícito: FreeJ2ME-Plus se compiló con JDK 8.
@@ -157,7 +160,7 @@ declare global {
 
 export const CHEERPJ_LOADER_URL =
   'https://cjrtnc.leaningtech.com/5.0/loader.js'
-export const ENGINE_JAR = '/app/JavaViva/engine/freej2me_plus.jar'
+export const ENGINE_JAR = '/app/javaviva/engine/freej2me_plus.jar'
 
 /**
  * Mensaje legible de cualquier error, SIN lanzar nunca.
