@@ -20,12 +20,13 @@ import { defineConfig } from 'vite'
 // (https://interactivo.nouslogic.xyz/JavaViva), no en la raíz del
 // dominio. Sin esto, los assets del build saldrían como /assets/...
 // y el navegador los buscaría en la raíz del subdominio.
-// OJO: esto NO mueve el .jar del motor. CheerpJ monta /app/ sobre la
-// RAÍZ del servidor web (docs: "/app/ is the root of the web server"),
-// así que ENGINE_JAR ('/app/engine/freej2me_plus.jar') se descarga de
-// {origen}/engine/freej2me_plus.jar: el jar tiene que estar en la raíz
-// del subdominio (o proxiar /engine/* al despliegue de JavaViva),
-// no dentro de /JavaViva/.
+// OJO: esto SÍ mueve dónde se sirve el .jar del motor. CheerpJ monta
+// /app/ sobre la RAÍZ del servidor web (docs: "/app/ is the root of
+// the web server"), y con este base Vite solo sirve public/ bajo
+// /JavaViva/: el jar se descarga de {origen}/JavaViva/engine/... por
+// eso ENGINE_JAR es '/app/JavaViva/engine/freej2me_plus.jar'. Con
+// '/app/engine/...' daba 404 en dev y en preview (v1.16 roto) aunque
+// el archivo existiera en public/engine/.
 export default defineConfig({
   base: '/JavaViva/',
   plugins: [react()],

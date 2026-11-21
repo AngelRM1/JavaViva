@@ -44,11 +44,20 @@ sin juegos incluidos. React + Vite es solo la cáscara: el motor es
 > **v1.15 + base /JavaViva/ (2026-11-20):** `vite.config.ts` ahora
 > tiene `base: '/JavaViva/'` para servir el sitio en
 > https://interactivo.nouslogic.xyz/JavaViva. En desarrollo se abre
-> en http://localhost:5173/JavaViva/ (no en la raíz). El `.jar` del
-> motor NO se mueve con el base: CheerpJ monta `/app/` sobre la raíz
-> del servidor, así que el jar tiene que estar en
-> `{origen}/engine/freej2me_plus.jar` (raíz del subdominio, o proxiar
-> `/engine/*` al despliegue de JavaViva).
+> en http://localhost:5173/JavaViva/ (no en la raíz).
+>
+> **v1.17 (2026-11-21) — el base rompió el .jar (404):** con base
+> '/JavaViva/' Vite solo sirve `public/` bajo `/JavaViva/`, así que
+> pedir `{origen}/engine/freej2me_plus.jar` daba 404 en dev y en
+> preview aunque el archivo existiera (el emulador no arrancaba: dos
+> errores 404 del jar en consola). CheerpJ monta `/app/` sobre la
+> raíz del servidor, por lo que `ENGINE_JAR` pasó a
+> `'/app/JavaViva/engine/freej2me_plus.jar'` (se descarga de
+> `{origen}/JavaViva/engine/...`, que sí se sirve). **Corrección al
+> _redirects de Interactivo dado antes:** la regla proxy correcta es
+> `/JavaViva/* https://<javaviva>.pages.dev/:splat 200` (el destino
+> es la RAÍZ del despliegue de Pages, no `/JavaViva/:splat` — ahí no
+> existe nada) y ya NO hace falta ninguna regla `/engine/*`.
 >
 > **v1.16 (2026-11-20):** la guía «Cómo jugar» tiene `margin-bottom:
 > 10px` (`.howto`). El sitio ahora tiene **dos landings**: `#/inicio`
