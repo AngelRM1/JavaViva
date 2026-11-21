@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JavaViva Web es un emulador J2ME en el navegador: sube tu propio juego .jar y juégalo como en un celular Java de los 2000. Sin juegos incluidos, sin instalar nada. También disponible para Windows."
+    />
+    <meta property="og:title" content="JavaViva Web — Emulador J2ME en el navegador" />
+    <meta
+      property="og:description"
+      content="Tus juegos Java .jar, en el navegador. Sube tu juego, pulsa Jugar y juega con el teclado en pantalla o el de tu PC."
+    />
+    <meta property="og:type" content="website" />
+    <title>JavaViva Web — Emulador J2ME en el navegador | NousLogic</title>
+    <!--
+      CheerpJ 5.0 — JVM en WebAssembly (Leaning Technologies).
+      Loader verificado en https://cheerpj.com/docs/overview
+      (versión 5.0, Java 8/11/17/21, Java 25 en preview).
+      Un solo script: carga la JVM y el OpenJDK desde el CDN.
+      Sin este script no hay emulador: React solo es la cáscara.
+      CheerpJ es propietario: gratis para uso personal/educativo/
+      hobby y evaluación; uso comercial necesita licencia.
+      Requiere conexión a internet (el runtime viene del CDN).
+    -->
+    <script src="https://cjrtnc.leaningtech.com/5.0/loader.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

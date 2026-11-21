@@ -1,0 +1,466 @@
+/* JavaViva Web — diseño "Nouslogic Glass Precision", igual que los
+   subdominios de NousLogic (DESIGN.md): tema claro, tarjetas de cristal,
+   acento cian/teal, Outfit para títulos, Inter para el cuerpo y
+   Plus Jakarta Sans para etiquetas. Fuentes autoalojadas (Fontsource). */
+:root {
+  --surface: #f8f9ff;
+  --surface-lowest: #ffffff;
+  --surface-low: #eff4ff;
+  --surface-container: #e5eeff;
+  --surface-high: #dce9ff;
+  --on-surface: #0b1c30;
+  --on-variant: #3e484d;
+  --outline: #6e797e;
+  --outline-variant: #bdc8ce;
+  --primary: #00647c;
+  --primary-container: #007f9d;
+  --on-primary: #ffffff;
+  --on-primary-container: #fafdff;
+  --primary-fixed: #b7eaff;
+  --primary-fixed-dim: #6cd3f7;
+  --secondary-container: #57dffe;
+  --error: #ba1a1a;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.015em; }
+h1 { font-size: 28px; margin: 0; font-weight: 600; }
+h2 { font-size: 20px; margin: 0 0 10px; font-weight: 600; }
+h3 { font-size: 16px; margin: 18px 0 8px; font-weight: 600; }
+p { margin: 6px 0; }
+a { color: var(--primary); }
+code {
+  font-family: var(--mono);
+  font-size: 13px;
+  background: var(--surface-container);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  background: var(--on-surface);
+  color: #e2e8f0;
+  padding: 10px;
+  border-radius: 12px;
+  overflow: auto;
+  max-height: 220px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+::selection { background: var(--secondary-container); color: var(--on-surface); }
+
+button {
+  font-family: var(--font-label);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--surface-container);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+button:hover:not(:disabled) { background: var(--surface-high); }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+  box-shadow: 0 4px 14px rgba(0, 100, 124, 0.25);
+}
+.btn-primary:hover:not(:disabled) { background: var(--primary-container); }
+.btn-small { padding: 6px 10px; font-size: 13px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+
+select, input[type='number'] {
+  background: var(--surface-lowest);
+  color: var(--on-surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-family: inherit;
+}
+input[type='checkbox'], input[type='radio'] { accent-color: var(--primary); }
+
+/* Contenedor principal (con espacio para el header fijo) */
+.app { max-width: 1180px; margin: 0 auto; padding: 88px 14px 30px; position: relative; }
+
+/* Header fijo con cristal, igual que en los subdominios */
+.site-header {
+  position: fixed;
+  left: 0; top: 0; right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(108, 211, 247, 0.3);
+  box-shadow: 0 4px 20px -10px rgba(87, 223, 254, 0.15);
+}
+.site-header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 24px;
+}
+.site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.site-brand .brand-nl {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+.site-brand .brand-sep { width: 1px; height: 16px; background: rgba(189, 200, 206, 0.6); }
+.site-brand .brand-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+.site-nav { display: flex; align-items: center; gap: 4px; }
+.nav-link {
+  font-family: var(--font-label);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on-variant);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-link:hover { background: var(--surface-container); color: var(--primary); }
+.nav-link.active {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  box-shadow: 0 2px 12px rgba(0, 100, 124, 0.15);
+}
+/* v1.15 — botón de Windows: el más llamativo del header. Degradado
+   teal, forma de píldora y sombra fuerte: anuncia que también hay
+   versión para Windows (el mismo emulador como programa instalado). */
+.nav-cta {
+  margin-left: 8px;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 55%, #0891b2 100%);
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  box-shadow: 0 4px 16px rgba(0, 100, 124, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+}
+.nav-cta:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0, 100, 124, 0.45); }
+.hamburger {
+  display: none;
+  width: 40px; height: 40px;
+  align-items: center; justify-content: center;
+  padding: 0;
+  font-size: 22px;
+  background: transparent;
+  color: var(--on-variant);
+}
+.hamburger:hover { background: var(--surface-container); }
+.mobile-nav {
+  display: none;
+  border-top: 1px solid rgba(108, 211, 247, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 12px 24px;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: var(--font-label);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on-variant);
+  text-decoration: none;
+}
+.mobile-nav a.active { background: var(--primary-container); color: var(--on-primary-container); }
+
+.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+.col-left, .col-right { display: flex; flex-direction: column; gap: 14px; }
+
+/* Tarjetas de cristal (como ProjectCard de los subdominios) */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(108, 211, 247, 0.25);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 12px 40px -15px rgba(8, 145, 178, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--secondary-container), transparent);
+  opacity: 0.7;
+}
+.muted { color: var(--on-variant); font-size: 13.5px; }
+.radio, .check { display: block; margin: 8px 0; }
+.form-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 10px 0; }
+.notice {
+  background: var(--surface-container);
+  border: 1px solid var(--primary-fixed-dim);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin: 12px 0;
+  font-size: 14px;
+}
+details summary { cursor: pointer; font-weight: 600; font-family: var(--font-label); }
+
+.dropzone {
+  border: 2px dashed var(--outline-variant);
+  border-radius: 16px;
+  padding: 22px;
+  text-align: center;
+  color: var(--on-variant);
+  cursor: pointer;
+}
+.dropzone.drag { border-color: var(--primary); color: var(--primary); background: rgba(183, 234, 255, 0.3); }
+.game-list { list-style: none; margin: 12px 0 0; padding: 0; }
+.game-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid var(--outline-variant);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  background: var(--surface-lowest);
+  flex-wrap: wrap;
+}
+.game-list li > div { min-width: 0; overflow-wrap: anywhere; }
+.game-list li.selected { border-color: var(--primary); background: rgba(183, 234, 255, 0.25); }
+
+/* Marco del teléfono: el aparato es oscuro, como un celular real */
+.phone-card { text-align: center; }
+.phone {
+  margin: 0 auto;
+  width: fit-content;
+  background: var(--on-surface);
+  border: 3px solid var(--primary);
+  border-radius: 32px;
+  padding: 14px 14px 10px;
+}
+.phone-earpiece {
+  width: 60px; height: 7px; border-radius: 4px;
+  background: #64748b; margin: 0 auto 10px;
+}
+.phone-screen {
+  position: relative;
+  background: #000;
+  border: 2px solid var(--primary-container);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 auto;
+  outline: none;
+}
+.phone-screen:focus { border-color: var(--primary-fixed-dim); }
+.cheerpj-display { width: 100%; height: 100%; }
+.cheerpj-display > div { width: 100% !important; height: 100% !important; }
+.screen-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  background: rgba(11, 28, 48, 0.88);
+  color: #e2e8f0;
+  padding: 12px;
+  font-size: 13.5px;
+  text-align: center;
+  pointer-events: none;
+}
+.phone-brand { color: #94a3b8; font-size: 12px; margin-top: 8px; letter-spacing: 2px; }
+
+/* Guía "Cómo jugar" */
+.howto { margin-bottom: 10px; }
+.howto ol { margin: 8px 0 4px; padding-left: 22px; }
+.howto li { margin: 6px 0; }
+.howto h2 { margin-bottom: 4px; }
+
+/* Botones de acción dentro de la tarjeta del teléfono (arriba de la pantalla) */
+.phone-actions { margin-bottom: 12px; }
+.phone-actions .btn-row { justify-content: center; margin: 0 0 4px; }
+
+/* Teclado en pantalla */
+.keypad {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(108, 211, 247, 0.25);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 12px 40px -15px rgba(8, 145, 178, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.keypad-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
+.keypad-head h2 { margin: 0; }
+.keypad-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.pad-btn.capturing { outline: 3px solid var(--primary-fixed-dim); background: var(--primary); color: #fff; }
+.pad-btn.editing { outline: 2px dashed var(--outline); }
+.pad-row { display: flex; gap: 8px; justify-content: center; margin-bottom: 8px; }
+.pad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 340px; margin: 0 auto 8px; }
+.pad-btn {
+  background: var(--surface-container);
+  color: var(--on-surface);
+  min-height: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.pad-btn:active { background: var(--primary); color: #fff; }
+.pad-btn:disabled { opacity: 0.4; }
+.pad-row .pad-btn { flex: 1; max-width: 110px; }
+.pad-fire { background: var(--primary-container); color: #fff; }
+.pad-fire:active { background: var(--primary); }
+.pad-label { font-size: 16px; }
+.pad-sub { font-size: 11px; color: var(--on-variant); }
+.pad-spacer { flex: 1; max-width: 110px; }
+.pad-hint { color: var(--on-variant); font-size: 13px; text-align: center; }
+
+.log { max-height: 260px; }
+
+/* Vista oculta (la otra "página"): sigue montada y con su tamaño, solo
+   no se pinta. Así el emulador no se desmonta al ir a la landing y el
+   display de CheerpJ conserva su tamaño al volver. */
+.page-hidden {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ---------- Landing ---------- */
+.hero { text-align: left; padding: 32px; margin-bottom: 14px; }
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+.hero h1 .accent { color: var(--primary); }
+.hero p.lead { font-size: 18px; line-height: 1.6; color: var(--on-variant); max-width: 640px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.hero-cta a { text-decoration: none; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.badge {
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--primary-fixed);
+  color: var(--on-surface);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.step-num {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--primary-container);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700;
+  margin-bottom: 10px;
+}
+.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+.spec {
+  background: var(--surface-low);
+  border-radius: 12px;
+  padding: 10px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.spec .spec-label { font-family: var(--font-label); font-size: 11px; font-weight: 600; color: var(--outline); }
+.spec .spec-value { font-family: var(--font-label); font-size: 14px; font-weight: 700; color: var(--primary); }
+.landing-section { margin-bottom: 14px; }
+.landing-section h2 { font-size: 28px; line-height: 1.2; }
+.win-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+.win-download {
+  background: var(--surface-low);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+.win-download .big { font-family: var(--font-display); font-size: 28px; font-weight: 600; }
+.faq details {
+  border: 1px solid var(--outline-variant);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: var(--surface-lowest);
+}
+.faq details p { color: var(--on-variant); }
+
+/* ---------- Pie simple (v1.15) ---------- */
+/* Se quitó el pie estilo subdominios. Queda el pie compacto de v1.13:
+   créditos siempre visibles + texto legal colapsable a un clic. */
+.footer { color: var(--on-variant); font-size: 13px; text-align: center; margin-top: 40px; }
+.footer p { margin: 4px 0; }
+.footer a { color: var(--primary); }
+.footer-legal-toggle { margin: 10px auto 0; }
+.footer .card { text-align: left; margin-top: 14px; }
+
+/* v1.13 — RESPONSIVO. El punto clave es el teléfono: su escala se
+   ajusta por JS a lo que cabe (ver fitScale en App.tsx), pero el CSS
+   evita que cualquier otra cosa se salga en pantallas angostas. */
+@media (max-width: 900px) {
+  .steps { grid-template-columns: 1fr; }
+  .win-grid { grid-template-columns: 1fr; }
+  .footer-col-brand, .footer-col, .footer-col-narrow { grid-column: span 12; }
+}
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .hamburger { display: inline-flex; }
+}
+@media (max-width: 600px) {
+  body { font-size: 14.5px; }
+  h1 { font-size: 22px; }
+  .app { padding: 80px 10px 24px; }
+  .card { padding: 16px; }
+  .hero { padding: 20px; }
+  .hero h1 { font-size: 36px; }
+  .hero p.lead { font-size: 16px; }
+  .dropzone { padding: 16px 10px; }
+  .phone { padding: 10px 10px 8px; border-radius: 26px; }
+  .phone-earpiece { margin-bottom: 8px; }
+  .pad-btn { min-height: 44px; }
+  .pad-grid { max-width: 300px; }
+  .spec-grid { grid-template-columns: 1fr 1fr; }
+}

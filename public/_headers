@@ -1,0 +1,5 @@
+# JavaViva Web — cabeceras para hosting estático (Netlify y similares).
+# COEP: credentialless (NO require-corp: bloquearía el loader de CheerpJ).
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: credentialless
