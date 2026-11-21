@@ -63,12 +63,23 @@ sin juegos incluidos. React + Vite es solo la cáscara: el motor es
 > el base pasó a `'/javaviva/'` y `ENGINE_JAR` a
 > `'/app/javaviva/engine/freej2me_plus.jar'` para que la URL pública
 > sea https://interactivo.nouslogic.xyz/javaviva (enmascara el
-> despliegue https://javaviva.pages.dev/ con la regla de
-> Interactivo `public/_redirects`:
-> `/javaviva/* https://javaviva.pages.dev/:splat 200`, antes del
-> fallback SPA). En desarrollo se abre ahora en
+> despliegue https://javaviva.pages.dev/). En desarrollo se abre ahora en
 > http://localhost:5173/javaviva/. El `.jar` del motor se subió al
 > repo por la web de GitHub (el conector no acepta binarios).
+>
+> **Corrección (2026-11-21): el proxy NO es una regla `_redirects`.**
+> Cloudflare Pages solo admite proxy 200 a URLs relativas del mismo
+> sitio ("Proxying will only support relative URLs on your site. You
+> cannot proxy external domains"), así que la regla
+> `/javaviva/* https://javaviva.pages.dev/:splat 200` se ignoraba en
+> silencio y `/javaviva` devolvía la SPA de Interactivo aunque el
+> despliegue y la configuración estuvieran bien. El proxy es una
+> Pages Function en el repo de Interactivo:
+> `functions/javaviva/[[path]].js` (hace fetch a javaviva.pages.dev
+> quitando el prefijo `/javaviva`). La URL directa javaviva.pages.dev
+> NO ejecuta el emulador: sus JS/CSS devuelven HTML porque la app
+> tiene base `/javaviva/` y en ese origen los archivos viven en
+> `/assets/`; solo funciona a través del proxy.
 >
 > **v1.16 (2026-11-20):** la guía «Cómo jugar» tiene `margin-bottom:
 > 10px` (`.howto`). El sitio ahora tiene **dos landings**: `#/inicio`
