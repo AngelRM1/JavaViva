@@ -45,7 +45,7 @@ let consoleMirrorInstalled = false
 export default function App() {
   const [cheerpjStatus, setCheerpjStatus] = useState<CheerpJStatus>('idle')
   const [log, setLog] = useState<string[]>([
-    'JavaViva Web v1.18 — URL en minúsculas (/javaviva/) y proxy en Interactivo. Sin juegos incluidos: sube tu propio .jar, solo en tu navegador. Motor: FreeJ2ME-Plus v1.53 (GPLv3) + CheerpJ 5.0.',
+    'JavaViva Web v1.19 — favicon NL, Registro colapsable y enlace de Interactivo en la misma pestaña. Sin juegos incluidos: sube tu propio .jar, solo en tu navegador. Motor: FreeJ2ME-Plus v1.53 (GPLv3) + CheerpJ 5.0.',
   ])
   // v1.11 — tecla física asignada a cada tecla del teléfono (se guarda
   // en este navegador). Ver src/lib/keys.ts.
@@ -62,6 +62,8 @@ export default function App() {
   const [lastSessionName, setLastSessionName] = useState<string | null>(null)
   // v1.13 — el texto legal del footer va colapsado (ver el pie en App).
   const [legalOpen, setLegalOpen] = useState(false)
+  // v1.19 — el Registro es colapsable (empieza cerrado).
+  const [logOpen, setLogOpen] = useState(false)
   // v1.14 — DOS PÁGINAS por hash: #/emulador (la actual, por defecto)
   // #/inicio (landing Web) y #/windows (landing Windows, v1.16).
   // El emulador NUNCA se desmonta: al ir a una landing solo se oculta
@@ -186,10 +188,10 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addLog])
 
-  // El log baja solo hasta la última línea.
+  // El log baja solo hasta la última línea (también al abrirlo).
   useEffect(() => {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight })
-  }, [log])
+  }, [log, logOpen])
 
   // v1.10 — ESPEJO DE ERRORES DE JAVA EN EL REGISTRO. CheerpJ imprime
   // las excepciones del hilo del juego solo en la consola del
@@ -596,15 +598,25 @@ export default function App() {
           />
 
           <section className="card">
-            <h2>📟 Registro</h2>
-            <pre ref={logRef} className="log">
-              {log.join('\n')}
-            </pre>
-            <p className="muted">
-              Si algo no funciona, copia las líneas que empiecen por
-              [consola] y mándamelas. La consola del navegador (F12) muestra
-              lo mismo con más detalle.
-            </p>
+            <button
+              type="button"
+              className="btn-small"
+              aria-expanded={logOpen}
+              onClick={() => setLogOpen((o) => !o)}
+            >
+              {logOpen ? '📟 Ocultar registro ▲' : '📟 Registro ▼'}
+            </button>
+            {logOpen && (
+              <>
+                <pre ref={logRef} className="log">
+                  {log.join('\n')}
+                </pre>
+                <p className="muted">
+                  Registro de la sesión: aquí se muestran los mensajes del
+                  emulador mientras juegas.
+                </p>
+              </>
+            )}
           </section>
         </div>
       </div>
@@ -619,7 +631,7 @@ export default function App() {
           de CheerpJ/GPLv3 deben seguir accesibles). */}
       <footer className="footer">
         <p>
-          © 2026 NousLogic • JavaViva Web v1.18 (versión segura) • Motor{' '}
+          © 2026 NousLogic • JavaViva Web v1.19 (versión segura) • Motor{' '}
           <a
             href="https://github.com/hex007/freej2me"
             target="_blank"

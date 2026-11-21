@@ -81,6 +81,14 @@ sin juegos incluidos. React + Vite es solo la cáscara: el motor es
 > tiene base `/javaviva/` y en ese origen los archivos viven en
 > `/assets/`; solo funciona a través del proxy.
 >
+> **v1.19 (2026-11-21):** favicon NL (antes era el de Vite por
+> defecto); la sección Registro ahora es colapsable (empieza
+> cerrada) y su texto es genérico ("Registro de la sesión: aquí se
+> muestran los mensajes del emulador mientras juegas."); el botón
+> "Visitar JavaViva Web" de la tarjeta de Interactivo ya no abre
+> pestaña nueva (misma pestaña, sin descarga: en `ProjectCard.tsx`
+> el atributo `download` ya no se deriva de `external`).
+>
 > **v1.16 (2026-11-20):** la guía «Cómo jugar» tiene `margin-bottom:
 > 10px` (`.howto`). El sitio ahora tiene **dos landings**: `#/inicio`
 > (JavaViva Web, la actual) y `#/windows` (nueva, `LandingWindows`:
