@@ -89,6 +89,16 @@ sin juegos incluidos. React + Vite es solo la cáscara: el motor es
 > pestaña nueva (misma pestaña, sin descarga: en `ProjectCard.tsx`
 > el atributo `download` ya no se deriva de `external`).
 >
+> **v1.20 (2026-11-21):** el botón "Descargar para Windows" (landing
+> #/windows y tarjeta de Interactivo) apunta directo al asset del
+> release v1.0.2 en GitHub
+> (`AngelRM1/JavaViva-Windows/releases/download/v1.0.2/JavaViva-v1.0.2.zip`);
+> ya no abre pestaña nueva (la descarga empieza y la página se
+> queda). El código de Windows vive en su propio repo
+> `AngelRM1/JavaViva-Windows` (el conector no puede pushear ahí: la
+> app de GitHub no está instalada en ese repo; el código y el
+> release se subieron por la web de GitHub).
+>
 > **v1.16 (2026-11-20):** la guía «Cómo jugar» tiene `margin-bottom:
 > 10px` (`.howto`). El sitio ahora tiene **dos landings**: `#/inicio`
 > (JavaViva Web, la actual) y `#/windows` (nueva, `LandingWindows`:

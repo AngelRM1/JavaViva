@@ -28,7 +28,7 @@ export default function LandingWindows() {
           con mejor rendimiento en 3D que en el navegador.
         </p>
         <div className="btn-row hero-ctas">
-          <a className="btn-primary" href={WINDOWS_URL} target="_blank" rel="noopener noreferrer">
+          <a className="btn-primary" href={WINDOWS_URL}>
             ⬇ Descargar para Windows
           </a>
           <a className="btn" href="#/emulador">

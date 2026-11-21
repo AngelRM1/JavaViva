@@ -2,7 +2,8 @@ import { useState } from 'react'
 
 export type Page = 'emulador' | 'inicio' | 'windows'
 
-export const WINDOWS_URL = 'https://nouslogic.xyz/JavaViva/windows'
+export const WINDOWS_URL =
+  'https://github.com/AngelRM1/JavaViva-Windows/releases/download/v1.0.2/JavaViva-v1.0.2.zip'
 
 interface Props {
   page: Page
