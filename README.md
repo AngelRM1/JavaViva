@@ -99,6 +99,22 @@ sin juegos incluidos. React + Vite es solo la cáscara: el motor es
 > app de GitHub no está instalada en ese repo; el código y el
 > release se subieron por la web de GitHub).
 >
+> **v1.21 (2026-11-23) — PWA:** la app es instalable y funciona
+> offline tras la primera carga online (`vite-plugin-pwa` 2.0,
+> `registerType: autoUpdate`). El service worker (`/javaviva/sw.js`,
+> scope `/javaviva/`) precachea la app y el `.jar` del motor (16
+> entradas) y guarda el runtime de CheerpJ del CDN en caché
+> (`CacheFirst`, `cheerpj-runtime`, 30 días) la primera vez que el
+> emulador arranca online; los juegos subidos ya vivían en IndexedDB
+> y también siguen offline. Manifiesto con íconos NL (192/512 +
+> maskable 512, generados desde el favicon) y `start_url`/`scope`
+> relativos para que valga en la URL enmascarada y en pages.dev. El
+> header muestra la píldora "Sin conexión — modo offline" cuando no
+> hay red. `public/_headers` sirve `sw.js` y `workbox-*.js` con
+> `no-cache` para que las actualizaciones lleguen. En iPhone el
+> caché puede ser borrado por el sistema si el almacenamiento se
+> aprieta: el offline ahí es menos garantizado.
+>
 > **v1.16 (2026-11-20):** la guía «Cómo jugar» tiene `margin-bottom:
 > 10px` (`.howto`). El sitio ahora tiene **dos landings**: `#/inicio`
 > (JavaViva Web, la actual) y `#/windows` (nueva, `LandingWindows`:

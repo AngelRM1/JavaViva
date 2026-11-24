@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // JavaViva Web — Vite + React + TypeScript
 //
@@ -29,7 +30,61 @@ import { defineConfig } from 'vite'
 // el archivo existiera en public/engine/.
 export default defineConfig({
   base: '/javaviva/',
-  plugins: [react()],
+  plugins: [
+    react(),
+    // v1.21 — PWA: instalable como app y funciona offline tras la
+    // primera carga online (el service worker guarda la app, el .jar
+    // del motor y el runtime de CheerpJ del CDN). El SW vive en
+    // /javaviva/sw.js (scope /javaviva/) y se sirve por el proxy de
+    // Interactivo; el manifiesto usa rutas relativas ('.') para que
+    // valga igual en la URL enmascarada y en pages.dev.
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'JavaViva Web — Emulador J2ME en el navegador',
+        short_name: 'JavaViva',
+        description:
+          'Tus juegos Java .jar, en el navegador. Sube tu juego, pulsa Jugar y juega con el teclado en pantalla o el de tu PC.',
+        id: '.',
+        start_url: '.',
+        scope: '.',
+        display: 'standalone',
+        lang: 'es',
+        background_color: '#f8f9ff',
+        theme_color: '#00647c',
+        icons: [
+          { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+          {
+            src: 'icons/icon-maskable-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
+        ],
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}', '**/*.jar'],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        runtimeCaching: [
+          {
+            // El runtime de CheerpJ (JVM + OpenJDK) viene del CDN de
+            // Leaning Technologies y pesa decenas de MB: se guarda en
+            // caché la primera vez que el emulador arranca online, y
+            // después la app funciona sin red. statuses [0, 200] cubre
+            // respuestas opacas (sin CORS) y normales.
+            urlPattern: /^https:\/\/cjrtnc\.leaningtech\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'cheerpj-runtime',
+              expiration: { maxEntries: 300, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+        ],
+      },
+    }),
+  ],
   server: {
     port: 5173,
     headers: {

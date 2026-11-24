@@ -3,3 +3,9 @@
 /*
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: credentialless
+# v1.21 — PWA: el service worker y su runtime de Workbox siempre
+# frescos, o las actualizaciones de la app tardarían en llegar.
+/sw.js
+  Cache-Control: no-cache
+/workbox-*.js
+  Cache-Control: no-cache

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export type Page = 'emulador' | 'inicio' | 'windows'
 
@@ -18,6 +18,19 @@ interface Props {
  */
 export default function SiteHeader({ page }: Props) {
   const [open, setOpen] = useState(false)
+  // v1.21 — PWA: avisa cuando no hay conexión (la app sigue
+  // funcionando offline si ya se cargó online una vez).
+  const [online, setOnline] = useState(() => navigator.onLine)
+  useEffect(() => {
+    const up = () => setOnline(true)
+    const down = () => setOnline(false)
+    window.addEventListener('online', up)
+    window.addEventListener('offline', down)
+    return () => {
+      window.removeEventListener('online', up)
+      window.removeEventListener('offline', down)
+    }
+  }, [])
 
   return (
     <header className="site-header">
@@ -57,6 +70,11 @@ export default function SiteHeader({ page }: Props) {
             ⬇ Versión para Windows
           </a>
         </nav>
+        {!online && (
+          <span className="badge badge-offline" role="status">
+            Sin conexión — modo offline
+          </span>
+        )}
         <button
           type="button"
           className="hamburger"

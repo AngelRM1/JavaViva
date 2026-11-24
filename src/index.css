@@ -389,6 +389,12 @@ details summary { cursor: pointer; font-weight: 600; font-family: var(--font-lab
   border-radius: 999px;
   padding: 4px 10px;
 }
+/* v1.21 — PWA: píldora visible solo sin conexión. */
+.badge-offline {
+  background: #f59e0b;
+  color: #1c1005;
+  white-space: nowrap;
+}
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
 .step-num {
   width: 36px; height: 36px;
