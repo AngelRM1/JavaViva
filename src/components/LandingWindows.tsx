@@ -1,4 +1,4 @@
-import { WINDOWS_URL } from './SiteHeader'
+import { SOURCE_URL, WINDOWS_URL } from './SiteHeader'
 
 /**
  * Landing de JavaViva Windows (v1.22): la segunda landing del sitio.
@@ -26,8 +26,8 @@ export default function LandingWindows() {
           <a className="btn-primary" href={WINDOWS_URL}>
             ⬇ Descargar para Windows
           </a>
-          <a className="btn-primary" href="#/emulador">
-            ▶ Jugar en el navegador
+          <a className="btn-primary" href={SOURCE_URL} target="_blank" rel="noopener noreferrer">
+            &lt;/&gt; Ver código fuente
           </a>
         </div>
         <div className="spec-grid">
