@@ -49,6 +49,7 @@ JavaViva Web se puede instalar como app en tu celular o PC: en el navegador, usa
 
 ## Novedades
 
+- **v1.28:** miniatura al compartir en Facebook y WhatsApp: nueva imagen Open Graph (1200x630, hecha con tu captura del juego corriendo en el navegador) y etiquetas `og:` + Twitter en el HTML. La imagen de Windows (1280x640, con tu captura del juego en el programa) va como imagen social del repo de GitHub.
 - **v1.27:** en la página "Qué es", la sección "¿Qué es JavaViva Web?" ahora va antes que "¿Cómo funciona?".
 - **v1.26:** el header ya solo tiene tres botones, en este orden: "Qué es JavaViva", "Emulador web" y "Versión para Windows". Se quitó el enlace "JavaViva Windows" (repetía el destino del botón de versión) y se renombraron "Emulador" y "JavaViva Web".
 - **v1.25:** el botón "Ver código fuente" de la página de Windows ahora abre el repo de Windows (`AngelRM1/JavaViva-Windows`); antes abría por error el repo de la versión web.

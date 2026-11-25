@@ -147,6 +147,14 @@ javaviva-web/
 
 ## Historial (resumido)
 
+- **v1.28 (2026-11-25):** miniatura al compartir en Facebook y
+  WhatsApp: `public/og-image.jpg` (1200x630, generada con
+  `tools/make-og-images.py` a partir de la captura real del usuario)
+  y etiquetas `og:` + `twitter:card` en `index.html`. Una sola
+  imagen para todo el sitio: los crawlers no ejecutan JS ni ven el
+  hash, así que `#/inicio` y `#/windows` comparten la misma
+  miniatura. La imagen de Windows (1280x640) va como social preview
+  del repo `AngelRM1/JavaViva-Windows` (Ajustes de GitHub).
 - **v1.27 (2026-11-24):** en `#/inicio`, la sección "¿Qué es
   JavaViva Web?" ahora va antes que "¿Cómo funciona?" (estaban al
   revés).
