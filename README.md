@@ -49,6 +49,7 @@ JavaViva Web se puede instalar como app en tu celular o PC: en el navegador, usa
 
 ## Novedades
 
+- **v1.29:** el aviso de «¿Cómo funciona?» ya no nombra ningún juego: ahora dice que los 2D van mejor en web y los 3D más lentos que en Windows, como en los READMEs.
 - **v1.28:** miniatura al compartir en Facebook y WhatsApp: nueva imagen Open Graph (1200x630, hecha con tu captura del juego corriendo en el navegador) y etiquetas `og:` + Twitter en el HTML. La imagen de Windows (1280x640, con tu captura del juego en el programa) va como imagen social del repo de GitHub.
 - **v1.27:** en la página "Qué es", la sección "¿Qué es JavaViva Web?" ahora va antes que "¿Cómo funciona?".
 - **v1.26:** el header ya solo tiene tres botones, en este orden: "Qué es JavaViva", "Emulador web" y "Versión para Windows". Se quitó el enlace "JavaViva Windows" (repetía el destino del botón de versión) y se renombraron "Emulador" y "JavaViva Web".

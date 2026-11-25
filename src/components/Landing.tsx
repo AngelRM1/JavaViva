@@ -103,9 +103,9 @@ export default function Landing() {
           </div>
         </div>
         <p className="notice">
-          Los juegos 2D van mejor en web; los 3D (como Need for Speed) van
-          más lentos que en Windows. Si un juego 3D te va lento aquí, prueba
-          la versión de Windows.
+          Los juegos 2D van mejor en web; los 3D van más lentos que en
+          Windows. Si un juego 3D te va lento aquí, prueba la versión de
+          Windows.
         </p>
       </section>
 

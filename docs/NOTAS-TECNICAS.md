@@ -147,6 +147,10 @@ javaviva-web/
 
 ## Historial (resumido)
 
+- **v1.29 (2026-11-25):** el aviso de "¿Cómo funciona?" en `#/inicio`
+  ya no nombra ningún juego (antes: "los 3D (como Need for Speed)
+  van más lentos que en Windows"), en línea con la regla de no
+  nombrar los juegos testeados.
 - **v1.28 (2026-11-25):** miniatura al compartir en Facebook y
   WhatsApp: `public/og-image.jpg` (1200x630, generada con
   `tools/make-og-images.py` a partir de la captura real del usuario)
