@@ -115,6 +115,17 @@ sin juegos incluidos. React + Vite es solo la cáscara: el motor es
 > caché puede ser borrado por el sistema si el almacenamiento se
 > aprieta: el offline ahí es menos garantizado.
 >
+> **v1.23 (2026-11-24) — hero sin badges y botón Ver código
+> fuente:** se quitaron las filas de badges sobre el título en las
+> dos landings (`Emulador J2ME / En el navegador / Sin instalar
+> nada` en `#/inicio` y `Programa para Windows / Sin instalar Java /
+> Biblioteca de juegos` en `#/windows`). El hero de `#/inicio` ya
+> solo tiene dos botones: `▶ Jugar ahora` y `</> Ver código fuente`
+> (nuevo, abre el repo `AngelRM1/JavaViva` en pestaña nueva); la
+> descarga de Windows sigue en la sección «También en Windows» y en
+> `#/windows`. La regla `.badge-row` quedó sin uso y se quitó; la
+> clase `.badge` sigue (la usa la píldora «Sin conexión» del header).
+>
 > **v1.22 (2026-11-24) — datos de Windows v1.1.7 y botones
 > uniformes:** las dos landings (`#/inicio` y `#/windows`) y la
 > tarjeta de Interactivo ya dicen Windows **v1.1.7** (sin terminal,

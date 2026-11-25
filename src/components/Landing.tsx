@@ -1,4 +1,4 @@
-import { WINDOWS_URL } from './SiteHeader'
+import { SOURCE_URL, WINDOWS_URL } from './SiteHeader'
 
 /**
  * Landing de JavaViva Web: qué es, cómo funciona y la descarga de
@@ -10,11 +10,6 @@ export default function Landing() {
   return (
     <div>
       <section className="card hero">
-        <div className="badge-row">
-          <span className="badge">Emulador J2ME</span>
-          <span className="badge">En el navegador</span>
-          <span className="badge">Sin instalar nada</span>
-        </div>
         <h1>
           Tus juegos Java de los 2000,{' '}
           <span className="accent">en el navegador</span>.
@@ -29,8 +24,8 @@ export default function Landing() {
           <a className="btn-primary" href="#/emulador">
             ▶ Jugar ahora
           </a>
-          <a className="btn-primary" href={WINDOWS_URL} target="_blank" rel="noopener noreferrer">
-            ⬇ Descargar para Windows
+          <a className="btn-primary" href={SOURCE_URL} target="_blank" rel="noopener noreferrer">
+            &lt;/&gt; Ver código fuente
           </a>
         </div>
         <div className="spec-grid">

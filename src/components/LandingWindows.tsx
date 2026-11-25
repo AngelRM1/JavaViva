@@ -14,11 +14,6 @@ export default function LandingWindows() {
   return (
     <div className="landing">
       <section className="card hero">
-        <div className="hero-badges">
-          <span className="badge">Programa para Windows</span>
-          <span className="badge">Sin instalar Java</span>
-          <span className="badge">Biblioteca de juegos</span>
-        </div>
         <h1>
           Tus juegos Java de los 2000, <span className="accent">en tu PC.</span>
         </h1>

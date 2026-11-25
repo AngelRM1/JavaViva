@@ -395,7 +395,7 @@ details summary { cursor: pointer; font-weight: 600; font-family: var(--font-lab
 .hero p.lead { font-size: 18px; line-height: 1.6; color: var(--on-variant); max-width: 640px; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 .hero-cta a { text-decoration: none; }
-.badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+/* v1.23: .badge-row se quitó (las landings ya no llevan badges sobre el título). */
 .badge {
   font-family: var(--font-label);
   font-size: 12px;

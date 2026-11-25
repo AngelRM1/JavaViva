@@ -7,6 +7,9 @@ export type Page = 'emulador' | 'inicio' | 'windows'
 // nunca descarga una versión vieja ni un enlace roto: cuando la
 // v1.1.7 se publique, este mismo enlace la descarga. Al publicar la
 // v1.1.7 se puede volver al enlace directo al zip.
+// v1.23 — código fuente de JavaViva Web (repo propio, botón del hero).
+export const SOURCE_URL = 'https://github.com/AngelRM1/JavaViva'
+
 export const WINDOWS_URL =
   'https://github.com/AngelRM1/JavaViva-Windows/releases/latest'
 
