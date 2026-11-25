@@ -23,10 +23,11 @@ interface Props {
 
 /**
  * Header fijo con cristal, igual que en los subdominios de NousLogic:
- * marca "NL" + JavaViva y navegación por páginas (hash): el emulador
- * y las dos landings, JavaViva Web y JavaViva Windows. El botón de
- * Windows es el más llamativo del header (degradado teal, píldora)
- * y lleva a la landing de Windows.
+ * marca "NL" + JavaViva y navegación por páginas (hash) en este orden:
+ * "Qué es JavaViva" (#/inicio), "Emulador web" (#/emulador) y el botón
+ * "⬇ Versión para Windows" (#/windows, el más llamativo del header:
+ * degradado teal, píldora). No hay enlace "JavaViva Windows" aparte:
+ * el botón de Versión para Windows ya lleva a esa landing.
  */
 export default function SiteHeader({ page }: Props) {
   const [open, setOpen] = useState(false)
@@ -54,25 +55,18 @@ export default function SiteHeader({ page }: Props) {
         </a>
         <nav className="site-nav" aria-label="Páginas de JavaViva Web">
           <a
-            href="#/emulador"
-            className={`nav-link ${page === 'emulador' ? 'active' : ''}`}
-            aria-current={page === 'emulador' ? 'page' : undefined}
-          >
-            Emulador
-          </a>
-          <a
             href="#/inicio"
             className={`nav-link ${page === 'inicio' ? 'active' : ''}`}
             aria-current={page === 'inicio' ? 'page' : undefined}
           >
-            JavaViva Web
+            Qué es JavaViva
           </a>
           <a
-            href="#/windows"
-            className={`nav-link ${page === 'windows' ? 'active' : ''}`}
-            aria-current={page === 'windows' ? 'page' : undefined}
+            href="#/emulador"
+            className={`nav-link ${page === 'emulador' ? 'active' : ''}`}
+            aria-current={page === 'emulador' ? 'page' : undefined}
           >
-            JavaViva Windows
+            Emulador web
           </a>
           <a
             className="btn-small nav-cta"
@@ -102,25 +96,25 @@ export default function SiteHeader({ page }: Props) {
         aria-label="Páginas de JavaViva Web (móvil)"
       >
         <a
-          href="#/emulador"
-          className={page === 'emulador' ? 'active' : ''}
-          onClick={() => setOpen(false)}
-        >
-          🎮 Emulador
-        </a>
-        <a
           href="#/inicio"
           className={page === 'inicio' ? 'active' : ''}
           onClick={() => setOpen(false)}
         >
-          🌐 JavaViva Web
+          🌐 Qué es JavaViva
+        </a>
+        <a
+          href="#/emulador"
+          className={page === 'emulador' ? 'active' : ''}
+          onClick={() => setOpen(false)}
+        >
+          🎮 Emulador web
         </a>
         <a
           href="#/windows"
           className={page === 'windows' ? 'active' : ''}
           onClick={() => setOpen(false)}
         >
-          🪟 JavaViva Windows
+          🪟 Versión para Windows
         </a>
       </nav>
     </header>

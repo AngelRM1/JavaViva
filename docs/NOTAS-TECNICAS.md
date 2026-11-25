@@ -147,6 +147,11 @@ javaviva-web/
 
 ## Historial (resumido)
 
+- **v1.26 (2026-11-24):** header con tres botones en orden: "Qué
+  es JavaViva" (#/inicio), "Emulador web" (#/emulador) y "⬇ Versión
+  para Windows" (#/windows). Se quitó el enlace "JavaViva Windows"
+  (repetía el destino del botón) y se renombraron "Emulador" y
+  "JavaViva Web" (también en el menú móvil).
 - **v1.25 (2026-11-24):** el botón "Ver código fuente" de
   `#/windows` ahora abre el repo de Windows
   (`AngelRM1/JavaViva-Windows`); antes abría por error el repo de
