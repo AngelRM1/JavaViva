@@ -147,6 +147,10 @@ javaviva-web/
 
 ## Historial (resumido)
 
+- **v1.25 (2026-11-24):** el botón "Ver código fuente" de
+  `#/windows` ahora abre el repo de Windows
+  (`AngelRM1/JavaViva-Windows`); antes abría por error el repo de
+  la versión web.
 - **v1.24 (2026-11-24):** el botón "Jugar en el navegador" de
   `#/windows` ahora es "Ver código fuente"; la descarga de
   Windows vuelve a ser directa al ZIP de la v1.1.7 (ya publicada).

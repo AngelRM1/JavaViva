@@ -6,6 +6,11 @@ export type Page = 'emulador' | 'inicio' | 'windows'
 // publicada (v1.1.7). En v1.22 se había puesto releases/latest porque
 // la v1.1.7 aún no estaba publicada como release; ya publicada, el
 // enlace directo descarga el ZIP sin pasar por la página del release.
+// v1.25 — código fuente del programa de Windows (repo propio).
+// No confundir con SOURCE_URL, que es el repo de JavaViva Web.
+export const WINDOWS_SOURCE_URL =
+  'https://github.com/AngelRM1/JavaViva-Windows'
+
 // v1.23 — código fuente de JavaViva Web (repo propio, botón del hero).
 export const SOURCE_URL = 'https://github.com/AngelRM1/JavaViva'
 

@@ -49,6 +49,7 @@ JavaViva Web se puede instalar como app en tu celular o PC: en el navegador, usa
 
 ## Novedades
 
+- **v1.25:** el botón "Ver código fuente" de la página de Windows ahora abre el repo de Windows (`AngelRM1/JavaViva-Windows`); antes abría por error el repo de la versión web.
 - **v1.24:** el botón "Jugar en el navegador" de la página de Windows ahora es "Ver código fuente"; la descarga de Windows vuelve a ser directa al archivo ZIP de la v1.1.7.
 - **v1.23:** sin las etiquetas sobre los títulos; el inicio ahora solo tiene "Jugar ahora" y "Ver código fuente".
 - **v1.22:** datos de Windows actualizados a la v1.1.7 y botones del mismo tamaño.
