@@ -45,6 +45,29 @@ export default function Landing() {
       </section>
 
       <section className="card landing-section">
+        <h2>¿Qué es JavaViva Web?</h2>
+        <p>
+          Solo un <strong>emulador</strong>: un programa que recrea un
+          teléfono Java en el navegador. No incluye, no aloja, no vende ni
+          distribuye ningún juego. Los juegos no vienen con el sitio: los
+          pones tú, desde tu computadora.
+        </p>
+        <p>
+          <strong>Solo usa archivos .jar que tengas legalmente</strong>:
+          juegos que compraste, copias de respaldo de juegos que compraste,
+          o juegos libres / de dominio público. «Abandonware» no es una
+          figura legal: que un juego ya no se venda no significa que sea
+          libre.
+        </p>
+        <p className="muted">
+          Motor FreeJ2ME-Plus v1.53 (GPLv3, código abierto) corriendo sobre
+          CheerpJ 5.0, una JVM completa en WebAssembly. Java es marca
+          registrada de Oracle; JavaViva no es un producto de Oracle, EA,
+          Nokia ni Gameloft.
+        </p>
+      </section>
+
+      <section className="card landing-section">
         <h2>¿Cómo funciona?</h2>
         <p className="muted">
           Tres pasos, sin cuentas ni instalaciones. Si ya jugaste en un
@@ -83,29 +106,6 @@ export default function Landing() {
           Los juegos 2D van mejor en web; los 3D (como Need for Speed) van
           más lentos que en Windows. Si un juego 3D te va lento aquí, prueba
           la versión de Windows.
-        </p>
-      </section>
-
-      <section className="card landing-section">
-        <h2>¿Qué es JavaViva Web?</h2>
-        <p>
-          Solo un <strong>emulador</strong>: un programa que recrea un
-          teléfono Java en el navegador. No incluye, no aloja, no vende ni
-          distribuye ningún juego. Los juegos no vienen con el sitio: los
-          pones tú, desde tu computadora.
-        </p>
-        <p>
-          <strong>Solo usa archivos .jar que tengas legalmente</strong>:
-          juegos que compraste, copias de respaldo de juegos que compraste,
-          o juegos libres / de dominio público. «Abandonware» no es una
-          figura legal: que un juego ya no se venda no significa que sea
-          libre.
-        </p>
-        <p className="muted">
-          Motor FreeJ2ME-Plus v1.53 (GPLv3, código abierto) corriendo sobre
-          CheerpJ 5.0, una JVM completa en WebAssembly. Java es marca
-          registrada de Oracle; JavaViva no es un producto de Oracle, EA,
-          Nokia ni Gameloft.
         </p>
       </section>
 

@@ -147,6 +147,9 @@ javaviva-web/
 
 ## Historial (resumido)
 
+- **v1.27 (2026-11-24):** en `#/inicio`, la sección "¿Qué es
+  JavaViva Web?" ahora va antes que "¿Cómo funciona?" (estaban al
+  revés).
 - **v1.26 (2026-11-24):** header con tres botones en orden: "Qué
   es JavaViva" (#/inicio), "Emulador web" (#/emulador) y "⬇ Versión
   para Windows" (#/windows). Se quitó el enlace "JavaViva Windows"
