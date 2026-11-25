@@ -2,8 +2,13 @@ import { useEffect, useState } from 'react'
 
 export type Page = 'emulador' | 'inicio' | 'windows'
 
+// v1.22 — la descarga siempre abre la ÚLTIMA versión publicada en
+// GitHub (antes apuntaba directo al zip de la v1.0.2). Así el botón
+// nunca descarga una versión vieja ni un enlace roto: cuando la
+// v1.1.7 se publique, este mismo enlace la descarga. Al publicar la
+// v1.1.7 se puede volver al enlace directo al zip.
 export const WINDOWS_URL =
-  'https://github.com/AngelRM1/JavaViva-Windows/releases/download/v1.0.2/JavaViva-v1.0.2.zip'
+  'https://github.com/AngelRM1/JavaViva-Windows/releases/latest'
 
 interface Props {
   page: Page

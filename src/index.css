@@ -86,6 +86,23 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
   box-shadow: 0 4px 14px rgba(0, 100, 124, 0.25);
 }
 .btn-primary:hover:not(:disabled) { background: var(--primary-container); }
+/* v1.22 — botones de las landings: mismo diseño y mismas dimensiones.
+   Los enlaces CTA (<a class="btn-primary">) no heredaban la caja del
+   <button> (relleno, radio, fuente), así que se veían como texto con
+   fondo y cada uno de un tamaño distinto; el segundo botón de
+   #/windows usaba una clase .btn sin estilo. Ahora todos comparten
+   altura, relleno, fuente y radio, y en una fila ocupan el mismo
+   ancho (flex: 1); el de descarga dentro de .win-download ocupa
+   todo el ancho de su tarjeta con la misma altura. */
+.hero-cta a, .hero-ctas a, .win-download a.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 12px 20px;
+  font-family: var(--font-label); font-size: 15px; font-weight: 600;
+  border-radius: 12px; text-align: center; text-decoration: none;
+  box-sizing: border-box;
+}
+.hero-cta a, .hero-ctas a { flex: 1 1 0; }
+.win-download a.btn-primary { width: 100%; }
 .btn-small { padding: 6px 10px; font-size: 13px; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
 

@@ -1,11 +1,11 @@
 import { WINDOWS_URL } from './SiteHeader'
 
 /**
- * Landing de JavaViva Windows (v1.16): la segunda landing del sitio.
+ * Landing de JavaViva Windows (v1.22): la segunda landing del sitio.
  * Se navega por hash (#/windows); el emulador nunca se desmonta.
  * Enfocada en CÓMO SE USA el programa de Windows, no en el navegador:
  * descargar, descomprimir, ejecutar, agregar juegos y jugar.
- * Datos verificados de Windows v1.0.2 (ver README): 98 MB, Windows
+ * Datos verificados de Windows v1.1.7 (ver README): 98 MB, Windows
  * 10/11 de 64 bits, runtime Java propio (no hay que instalar Java),
  * biblioteca con validación de .jar, resolución automática, teclado
  * en pantalla (dígitos por NUMPAD) y configuración por juego.
@@ -31,7 +31,7 @@ export default function LandingWindows() {
           <a className="btn-primary" href={WINDOWS_URL}>
             ⬇ Descargar para Windows
           </a>
-          <a className="btn" href="#/emulador">
+          <a className="btn-primary" href="#/emulador">
             ▶ Jugar en el navegador
           </a>
         </div>
@@ -114,10 +114,11 @@ export default function LandingWindows() {
           que fallan.
         </p>
         <p className="muted">
-          Desde la v1.0.2 la configuración sí se aplica en todos los juegos
-          (antes el archivo de configuración se escribía en la carpeta
-          equivocada), los dígitos del teclado llegan como teclas numéricas
-          y el sonido se aplica en cada inicio.
+          Desde la v1.1.6 el programa sigue al proceso real del juego: el
+          registro ya no dice que se cerró con el juego en pantalla,
+          Detener sí detiene el juego y la captura de pantalla funciona
+          mientras juegas. Y desde la v1.1.7 no hay sección de terminal y
+          todos los botones tienen el mismo tamaño.
         </p>
       </section>
 
@@ -133,7 +134,7 @@ export default function LandingWindows() {
             </p>
           </div>
           <div className="win-download">
-            <div className="big">JavaViva Web</div>
+            <div className="big">JavaViva Web v1.22</div>
             <p className="muted">
               En el navegador • Sin instalar nada
               <br />

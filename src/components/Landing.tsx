@@ -119,7 +119,7 @@ export default function Landing() {
         <div className="win-grid">
           <div>
             <p>
-              ¿Prefieres jugar en tu PC? <strong>JavaViva Windows v1.0.2</strong>{' '}
+              ¿Prefieres jugar en tu PC? <strong>JavaViva Windows v1.1.7</strong>{' '}
               es el mismo emulador como programa instalado: biblioteca de
               juegos, configuración por juego (resolución, perfil de
               teléfono, sonido, compatibilidad), teclado en pantalla y
@@ -129,13 +129,18 @@ export default function Landing() {
               <li>No necesita Java instalado: lleva su propio runtime.</li>
               <li>Los juegos 3D van mejor que en web.</li>
               <li>
-                v1.0.2 corrige el game.conf (ahora sí se aplica en todos los
-                juegos), los dígitos del teclado y los perfiles de teléfono.
+                v1.1.7: sin sección de terminal y todos los botones del
+                mismo tamaño, con el aviso de nueva versión en el encabezado.
+              </li>
+              <li>
+                v1.1.6: el juego ya no se «cierra» solo en el registro, no se
+                pueden correr dos juegos a la vez y la captura de pantalla
+                funciona mientras juegas.
               </li>
             </ul>
           </div>
           <div className="win-download">
-            <div className="big">Windows v1.0.2</div>
+            <div className="big">Windows v1.1.7</div>
             <p className="muted">
               Windows 10/11 de 64 bits • 98 MB
               <br />
@@ -147,7 +152,7 @@ export default function Landing() {
             <p className="muted" style={{ marginTop: '10px' }}>
               <a href="#/windows">Ver cómo funciona en Windows →</a>
               <br />
-              El enlace de descarga abre nouslogic.xyz/JavaViva/windows.
+              El enlace de descarga abre la página de la última versión en GitHub.
             </p>
           </div>
         </div>

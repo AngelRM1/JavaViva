@@ -115,6 +115,25 @@ sin juegos incluidos. React + Vite es solo la cáscara: el motor es
 > caché puede ser borrado por el sistema si el almacenamiento se
 > aprieta: el offline ahí es menos garantizado.
 >
+> **v1.22 (2026-11-24) — datos de Windows v1.1.7 y botones
+> uniformes:** las dos landings (`#/inicio` y `#/windows`) y la
+> tarjeta de Interactivo ya dicen Windows **v1.1.7** (sin terminal,
+> botones uniformes, aviso de nueva versión en el encabezado, y de
+> la v1.1.6: el juego ya no se «cierra» solo, no se corren dos juegos
+> a la vez, la captura funciona mientras juegas). La descarga de
+> Windows ya no apunta directo al zip de la v1.0.2: ahora abre la
+> página de la **última versión publicada** en GitHub
+> (`.../JavaViva-Windows/releases/latest`), así nunca descarga una
+> versión vieja ni un enlace roto — la v1.1.7 aún no está publicada
+> como release, y cuando se publique este mismo enlace la descarga
+> (entonces se puede volver al enlace directo al zip). Botones CTA
+> unificados: los enlaces `btn-primary` de las landings no heredaban
+> la caja del `<button>` y se veían como texto con fondo, cada uno de
+> un tamaño (y el segundo botón de `#/windows` usaba una clase `btn`
+> sin estilo). Ahora todos comparten altura (48 px), relleno, fuente
+> y radio, y en una fila ocupan el mismo ancho (`.hero-cta a`,
+> `.hero-ctas a`, `.win-download a.btn-primary`).
+>
 > **v1.16 (2026-11-20):** la guía «Cómo jugar» tiene `margin-bottom:
 > 10px` (`.howto`). El sitio ahora tiene **dos landings**: `#/inicio`
 > (JavaViva Web, la actual) y `#/windows` (nueva, `LandingWindows`:
